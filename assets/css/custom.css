@@ -251,7 +251,7 @@ font-weight: 700;
 }
 .sidebar-collapse .nav > li > a {
 	color:#fff;
-	background:#202020;
+	background:#04913f;
 	text-shadow:none;
 	
 }
@@ -264,7 +264,7 @@ font-weight: 700;
 .sidebar-collapse .nav > li > a:hover,
 .sidebar-collapse .nav > li > a:focus {
 	
-	background:#0A0A0A;
+	background:#0a0a0a;
 	outline:0;
 }
 
@@ -305,7 +305,7 @@ font-weight: 700;
 	
 }
 .navbar-cls-top {
-	background:#4D4D4D;
+	background:#04913f;
 	border-bottom:none;
 	
 }

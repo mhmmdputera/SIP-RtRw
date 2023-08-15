@@ -76,7 +76,7 @@
 
 					<!-- Level  -->
 					<?php
-                    if ($data_level=="Administrator"){
+                    if ($data_level=="Admin"){
                     ?>
 
 					<li>
@@ -136,7 +136,7 @@
 					</li>
 
 					<?php
-                        } elseif($data_level=="Petugas"){
+                        } elseif($data_level=="Pelayanan"){
                     ?>
 					<li>
 						<a href="?page=petugas-def">
@@ -305,10 +305,10 @@
                                 break;    
                         }
                     }else{
-                        if($data_level=="Administrator"){
+                        if($data_level=="Admin"){
                             include "default/admin.php";
                             }
-                            elseif($data_level=="Petugas"){
+                            elseif($data_level=="Pelayanan"){
                                 include "default/tugas.php";
                                 }
                                 elseif($data_level=="Pengadu"){

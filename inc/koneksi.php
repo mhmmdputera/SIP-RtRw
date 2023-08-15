@@ -1,5 +1,5 @@
 <?php
-   $koneksi = new mysqli ("localhost","root","","db_pangkat");
+   $koneksi = new mysqli ("localhost","root","","db_siprtrw");
 ?>
 
 <!-- end -->
