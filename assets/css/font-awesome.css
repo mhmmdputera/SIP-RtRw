@@ -735,6 +735,18 @@
 .fa-bars:before {
   content: "\f0c9";
 }
+.fa-sort:before {
+  content: "\f0dc";
+}
+.fa-newspaper:before {
+  content: "\f1ea";
+}
+.fa-xmark:before {
+  content: "\f00d";
+}
+.fa-compare:before {
+  content: "\e13a";
+}
 .fa-list-ul:before {
   content: "\f0ca";
 }

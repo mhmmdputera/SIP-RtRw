@@ -4319,12 +4319,27 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   background-color: #ec971f;
 }
 .label-danger {
-  background-color: #d9534f;
+  background-color: #DB0630;;
 }
 .label-danger[href]:hover,
 .label-danger[href]:focus {
   background-color: #c9302c;
 }
+.label-start {
+  background-color: rgb(230, 226, 7);
+}
+.label-start[href]:hover,
+.label-start[href]:focus {
+  background-color: rgb(148, 146, 23);
+}
+.label-finish {
+  background-color: #A95DF0;
+}
+.label-finish[href]:hover,
+.label-finish[href]:focus {
+  background-color: #583975;
+}
+
 .badge {
   display: inline-block;
   min-width: 10px;

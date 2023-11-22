@@ -30,6 +30,17 @@
 						<input class="form-control" name="id_chat" value="<?php echo $data_cek['id_chat']; ?>"
 						/>
 					</div>
+					
+					<div class="form-group">
+					<label>User 2</label>
+					<input class="form-control" name="user2" value="<?php echo $data_cek['user2']; ?>" />
+					</div>
+
+					<div class="form-group">
+					<label>Id Chat 2</label>
+					<input class="form-control" name="id_chat2" value="<?php echo $data_cek['id_chat2']; ?>" />
+					</div>
+
 					<div>
 						<input type="submit" name="Ubah" value="Ubah" class="btn btn-success">
 					</div>
@@ -45,9 +56,11 @@
 <?php
 if (isset ($_POST['Ubah'])){
     
-    $sql_ubah = "UPDATE tb_telegram SET user='".$_POST['user']."', id_chat='".$_POST['id_chat']."'
-		WHERE id_telegram='".$_POST['id_telegram']."'";
-	$query_ubah = mysqli_query($koneksi, $sql_ubah);
+    $sql_ubah = "UPDATE tb_telegram 
+             SET user='".$_POST['user']."', id_chat='".$_POST['id_chat']."',
+                 user2='".$_POST['user2']."', id_chat2='".$_POST['id_chat2']."'
+             WHERE id_telegram='".$_POST['id_telegram']."'";
+
 	
     if ($query_ubah) {
         echo "<script>

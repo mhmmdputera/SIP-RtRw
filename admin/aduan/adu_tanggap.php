@@ -25,7 +25,7 @@
                         $no = 1;
 						$sql = $koneksi->query("select a.id_pengaduan, a.judul, a.foto, a.status, j.jenis, p.nama_pengadu, p.no_hp
 						from tb_pengaduan a join tb_jenis j on a.jenis=j.id_jenis
-						join tb_pengadu p on a.author=p.id_pengadu where status='Tanggapi'");
+						join tb_pengadu p on a.author=p.id_pengadu where status='Periksa'");
                         while ($data= $sql->fetch_assoc()) {
                     ?>
 					<tr>
@@ -48,10 +48,10 @@
 						</td>
 						<td>
 							<?php $stt = $data['status']  ?>
-							<?php if($stt == 'Proses'){ ?>
-							<span class="label label-warning">Proses</span>
-							<?php }elseif($stt == 'Tanggapi'){ ?>
-							<span class="label label-success">Ditanggapi</span>
+							<?php if($stt == 'Diajukan'){ ?>
+							<span class="label label-warning">Diajukan</span>
+							<?php }elseif($stt == 'Periksa'){ ?>
+							<span class="label label-success">Diperiksa</span>
 							<?php }else{ ?>
 							<span class="label label-primary">Selesai</span>
 						</td>

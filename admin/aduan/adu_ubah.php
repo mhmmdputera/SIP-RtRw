@@ -76,8 +76,11 @@
 					<label>Status :</label>
 					<select name="status" class="form-control" required>
 						<option value="">- Pilih -</option>
-						<option>Tanggapi</option>
+						<option>Periksa</option>
+						<option>Kembalikan</option>
+						<option>Proses</option>
 						<option>Selesai</option>
+						<option>Tolak</option>
 					</select>
 				</div>
 
@@ -101,11 +104,20 @@
 
 if (isset ($_POST['Ubah'])){
 
-	$sql_ubah = "UPDATE tb_pengaduan SET
-		status='".$_POST['status']."',
-		tanggapan='".$_POST['tanggapan']."'
-		WHERE id_pengaduan='".$_POST['id_pengaduan']."'";
-	$query_ubah = mysqli_query($koneksi, $sql_ubah);
+	$status_baru = $_POST['status'];
+    $tanggapan = $_POST['tanggapan'];
+    $id_pengaduan = $_POST['id_pengaduan'];
+
+    $sql_tambah_riwayat = "INSERT INTO tb_riwayat (id_pengaduan, status, tanggal, tanggapan)
+                           VALUES ('$id_pengaduan', '$status_baru', NOW(), '$tanggapan')";
+    $query_tambah_riwayat = mysqli_query($koneksi, $sql_tambah_riwayat);
+
+    $sql_ubah = "UPDATE tb_pengaduan SET
+        status='$status_baru',
+        tanggapan='$tanggapan'
+        WHERE id_pengaduan='$id_pengaduan'";
+
+    $query_ubah = mysqli_query($koneksi, $sql_ubah);
 
     if ($query_ubah) {
         echo "<script>

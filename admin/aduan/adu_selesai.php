@@ -53,7 +53,7 @@
 							<?php }elseif($stt == 'Tanggapi'){ ?>
 							<span class="label label-success">Ditanggapi</span>
 							<?php }else{ ?>
-							<span class="label label-primary">Selesai</span>
+							<span class="label label-finish">Selesai</span>
 						</td>
 						<?php } ?>
 

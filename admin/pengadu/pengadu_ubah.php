@@ -51,6 +51,25 @@
 						<input class="form-control" name="alamat" value="<?php echo $data_cek['alamat']; ?>"
 						/>
 					</div>
+					<div class="form-group">
+					<label>Kelurahan</label>
+					<select name="kelurahan" class="form-control">
+							<?php
+                            //menhecek data yg dipilih sebelumnya
+                            if ($data_cek['Kelurahan'] == "Loktabat Selatan") echo "<option value='Loktabat Selatan' selected>Loktabat Selatan</option>";
+                            else echo "<option value='Loktabat Selatan'>Loktabat Selatan</option>";
+            
+                            if ($data_cek['Kelurahan'] == "Kemuning") echo "<option value='Kemuning' selected>Kemuning</option>";
+                            else echo "<option value='Kemuning'>Kemuning</option>";
+
+							if ($data_cek['Kelurahan'] == "Guntung Paikat") echo "<option value='Guntung Paikat' selected>Guntung Paikat</option>";
+                            else echo "<option value='Guntung Paikat'>Guntung Paikat</option>";
+
+							if ($data_cek['Kelurahan'] == "Sungai Besar") echo "<option value='Sungai Besar' selected>Sungai Besar</option>";
+                            else echo "<option value='Sungai Besar'>Sungai Besar</option>";
+                        ?>
+						</select>
+					</div>
 					<div>
 						<input type="submit" name="Ubah" value="Ubah" class="btn btn-success">
 						<a href="?page=pengadu_view" title="Kembali" class="btn btn-default">Batal</a>
@@ -73,7 +92,8 @@ if (isset ($_POST['Ubah'])){
 		nama_pengadu='".$_POST['nama_pengadu']."',
 		jekel='".$_POST['jekel']."',
 		no_hp='".$_POST['no_hp']."',
-		alamat='".$_POST['alamat']."' 
+		alamat='".$_POST['alamat']."',
+		Kelurahan='".$_POST['kelurahan']."' 
 		WHERE id_pengadu='".$_POST['id_pengadu']."'";
 	$query_ubah = mysqli_query($koneksi, $sql_ubah);
 

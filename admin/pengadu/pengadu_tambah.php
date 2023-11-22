@@ -46,6 +46,18 @@ $UUID = generate_uuid();
 					</div>
 
 					<div class="form-group">
+					<label>Kelurahan</label>
+					<select name="kelurahan" class="form-control">
+						<option value="">- Pilih -</option>
+						<option>Loktabat Selatan</option>
+						<option>Kemuning</option>
+						<option>Guntung Paikat</option>
+						<option>Sungai Besar</option>
+					</select>
+					</div>
+
+
+					<div class="form-group">
 						<label>Username</label>
 						<input class="form-control" name="username" placeholder="Username" required/>
 					</div>
@@ -68,13 +80,15 @@ $UUID = generate_uuid();
 <?php
 
     if (isset ($_POST['Simpan'])){
-        
-        $sql_simpan = "INSERT INTO tb_pengadu (id_pengadu, nama_pengadu, jekel, no_hp, alamat) VALUES (
+        $kelurahan = $_POST['kelurahan'];
+
+        $sql_simpan = "INSERT INTO tb_pengadu (id_pengadu, nama_pengadu, jekel, no_hp, alamat, Kelurahan) VALUES (
 			'$UUID',
 			'".$_POST['nama_pengadu']."',
 			'".$_POST['jekel']."',
 			'".$_POST['no_hp']."',
-			'".$_POST['alamat']."')";
+			'".$_POST['alamat']."',
+			'$kelurahan')";
 		$query_simpan = mysqli_query($koneksi, $sql_simpan);
 
 		$sql_pengguna = "INSERT INTO tb_pengguna (id_pengguna, nama_pengguna, username, password) VALUES (

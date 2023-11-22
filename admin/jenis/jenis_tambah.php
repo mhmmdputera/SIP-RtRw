@@ -9,8 +9,8 @@
 				<form method="POST">
 
 					<div class="form-group">
-						<label>Nama Pengguna</label>
-						<input class="form-control" name="jenis" placeholder="Nama Pengguna" required/>
+						<label>Jenis Aduan</label>
+						<input class="form-control" name="jenis" placeholder="Jenis Aduan" required/>
 					</div>
 
 					<div>

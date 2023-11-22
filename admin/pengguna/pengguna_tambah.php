@@ -28,7 +28,8 @@
 						<select name="level" class="form-control">
 							<option value="">- Pilih -</option>
 							<option>Petugas</option>
-							<option>Administrator</option>
+							<option>Pengadu</option>
+							<option>Admin</option>
 						</select>
 					</div>
 

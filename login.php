@@ -1,5 +1,13 @@
 <?php
-     include "inc/koneksi.php";   
+     include "inc/koneksi.php"; 
+	 
+	 session_start();
+    if(isset($_COOKIE['ses_id']) && isset($_COOKIE['ses_nama']) && isset($_COOKIE['ses_level']) && isset($_COOKIE['ses_grup'])) {
+        $_SESSION["ses_id"] = $_COOKIE['ses_id'];
+        $_SESSION["ses_nama"] = $_COOKIE['ses_nama'];
+        $_SESSION["ses_level"] = $_COOKIE['ses_level'];
+        $_SESSION["ses_grup"] = $_COOKIE['ses_grup'];
+    }
 ?>
 
 
@@ -9,7 +17,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Masuk | SIP RT-RW</title>
+	<title>Masuk | SI-MASKOT</title>
 	<!-- BOOTSTRAP STYLES-->
 	<link href="assets/css/bootstrap.css" rel="stylesheet" />
 	<!-- FONTAWESOME STYLES-->
@@ -40,10 +48,10 @@
 						<img src="assets/img/sip.jpg" class="user-image img-responsive" />
 						<center>
 							<h2>
-								<b>SIP RT-RW</b>
+								<b>SI-MASKOT</b>
 							</h2>
 						</center>
-						<CENTER>Sistem Informasi Pengaduan Rukun Tetangga dan Rukun Warga</CENTER>
+						<CENTER>Sistem Informasi Pengaduan Masyarakat Kota Banjarbaru Selatan</CENTER>
 						<form action="" method="POST" enctype="multipart/form-data">
 							<br />
 							<div class="form-group input-group">
@@ -62,7 +70,8 @@
 							<button type="submit" class="btn btn-primary form-control" name="btnLogin" title="Masuk Sistem" />MASUK</button>
 							<br>
 							<br>
-							<CENTER>SIP RT-RW 2023</CENTER>
+							<CENTER>Kecamatan</CENTER>			
+							<CENTER>Banjarbaru Selatan</CENTER>
 						</form>
 					</div>
 				</div>
@@ -102,6 +111,12 @@
                 $_SESSION["ses_nama"]=$data_login["nama_pengguna"];
                 $_SESSION["ses_level"]=$data_login["level"];
                 $_SESSION["ses_grup"]=$data_login["grup"];
+
+				// Set cookie
+				setcookie("ses_id", $_SESSION["ses_id"], time() + 3600); // Cookie akan kadaluwarsa dalam 1 jam
+				setcookie("ses_nama", $_SESSION["ses_nama"], time() + 3600);
+				setcookie("ses_level", $_SESSION["ses_level"], time() + 3600);
+				setcookie("ses_grup", $_SESSION["ses_grup"], time() + 3600);
 
             echo "<script>
                     Swal.fire({title: 'SUKSES',text: '',icon: 'success',confirmButtonText: 'OK'

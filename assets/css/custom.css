@@ -19,6 +19,7 @@ body {
  #wrapper {
     width: 100%;
     background:#202020;
+    
 }
 
 #page-wrapper {
@@ -111,6 +112,16 @@ color: #fff;
 background-color: #B94A00;
 color: #fff;
 }
+
+  .bg-color-yellow {
+background-color: rgb(230, 226, 7);
+color: #fff;
+}
+
+  .bg-color-grey {
+background-color: rgb(138, 138, 134);
+color: #fff;
+    }
 
 
  .icon-box-right {
@@ -375,5 +386,6 @@ line-height: 1.428571429;
 }
    
 }
+
 
 

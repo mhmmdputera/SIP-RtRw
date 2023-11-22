@@ -13,6 +13,8 @@
 
     include "inc/koneksi.php";
 
+	ob_start();
+	
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +23,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>SIP RT-RW</title>
+	<title>SI-MASKOT</title>
 	<!-- BOOTSTRAP STYLES-->
 	<link href="assets/css/bootstrap.css" rel="stylesheet" />
 	<!-- FONTAWESOME STYLES-->
@@ -36,6 +38,8 @@
 	<link href="assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 	<style>
 		.swal2-popup {
 			font-size: 1.6rem !important;
@@ -55,7 +59,7 @@
 					<span class="icon-bar"></span>
 				</button>
 				<a href="index.php" class="navbar-brand">
-					<i class="glyphicon glyphicon-send"></i> SIP RT-RW</a>
+					<i class="glyphicon glyphicon-send"></i> SI-MASKOT</a>
 			</div>
 			<div style="color: white;
                 padding: 15px 50px 5px 50px;
@@ -76,6 +80,7 @@
 
 					<!-- Level  -->
 					<?php
+					
                     if ($data_level=="Admin"){
                     ?>
 
@@ -106,13 +111,22 @@
 						</a>
 						<ul class="nav nav-second-level">
 							<li>
-								<a href="?page=aduan_admin">Menunggu</a>
+								<a href="?page=aduan_admin">Diajukan</a>
 							</li>
 							<li>
-								<a href="?page=aduan_admin_tanggap">Ditanggapi</a>
+								<a href="?page=aduan_admin_tanggap">Diperiksa</a>
+							</li>
+							<li>
+								<a href="?page=aduan_admin_kembalikan">Dikembalikan</a>
+							</li>
+							<li>
+								<a href="?page=aduan_admin_proses">Diproses</a>
 							</li>
 							<li>
 								<a href="?page=aduan_admin_selesai">Selesai</a>
+							</li>
+							<li>
+								<a href="?page=aduan_admin_tolak">Ditolak</a>
 							</li>
 						</ul>
 					</li>
@@ -149,13 +163,22 @@
 						</a>
 						<ul class="nav nav-second-level">
 							<li>
-								<a href="?page=aduan_admin">Menunggu</a>
+								<a href="?page=aduan_admin">Diajukan</a>
 							</li>
 							<li>
-								<a href="?page=aduan_admin_tanggap">Ditanggapi</a>
+								<a href="?page=aduan_admin_tanggap">Diperiksa</a>
+							</li>
+							<li>
+								<a href="?page=aduan_admin_kembalikan">Dikembalikan</a>
+							</li>
+							<li>
+								<a href="?page=aduan_admin_proses">Diproses</a>
 							</li>
 							<li>
 								<a href="?page=aduan_admin_selesai">Selesai</a>
+							</li>
+							<li>
+								<a href="?page=aduan_admin_tolak">Ditolak</a>
 							</li>
 						</ul>
 					</li>
@@ -182,6 +205,12 @@
 						</a>
 					</li>
 
+					<li>
+						<a href="?page=proses_pengajuan">
+							<i class="fa fa-bell fa-2x"></i> Proses Pengajuan
+						</a>
+					</li>
+
 				</ul>
 
 				<?php
@@ -189,13 +218,15 @@
                 ?>
 			</div>
 		</nav>
+
+		
 		<!-- /. PAGE WRAPPER  -->
 		<div id="page-wrapper">
 			<div id="page-inner">
 				<div class="row">
 					<div class="col-md-12">
 						<marquee>
-							<b>- SISTEM INFORMASI PENGADUAN RUKUN TETANGGA - RUKUN WARGA | FITUR TAMBAHAN YANG ADA PADA APLIKASI INI MENGGUNAKAN
+							<b>- SISTEM INFORMASI PENGADUAN MASYARAKAT KOTA BANJARBARU SELATAN | FITUR TAMBAHAN YANG ADA PADA APLIKASI INI MENGGUNAKAN
 								REALTIME NOTIFIKASI TELEGRAM -
 							</b>
 						</marquee>
@@ -274,6 +305,15 @@
 							case 'aduan_kelola':
 								include "admin/aduan/adu_ubah.php";
 								break;
+							case 'aduan_admin_kembalikan':
+								include "admin/aduan/adu_kembalikan.php";
+								break;
+							case 'aduan_admin_proses':
+								include "admin/aduan/adu_proses.php";
+								break;
+							case 'aduan_admin_tolak':
+								include "admin/aduan/adu_tolak.php";
+								break;
 
 							//telegram
 							case 'telegram':
@@ -282,6 +322,10 @@
 
 							case 'laporan':
 								include "admin/laporan/laporan.php";
+								break;
+								
+							case 'cetak':
+								include "admin/laporan/cetak_laporan.php";
 								break;
 								
 							//aduan
@@ -297,7 +341,12 @@
 							 case 'aduan_hapus':
 								 include "pengadu/aduan/adu_hapus.php";
 								 break;
-								 
+							case 'proses_pengajuan':
+								 include "pengadu/aduan/proses_pengajuan.php";
+								 break;
+							case 'riwayat':
+								 include "pengadu/aduan/riwayat.php";
+								 break;		 
                                 
                                 //default
                              default:
@@ -315,6 +364,7 @@
                                     include "default/pengadu.php";
                                     }
                     }
+					
                 ?>
 					</div>
 				</div>
