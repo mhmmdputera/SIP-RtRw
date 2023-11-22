@@ -118,11 +118,11 @@
 			$nama_pengadu = urlencode($nama_pengadu); 
     		$nama_pengadu = str_replace("+", "%20", $nama_pengadu); 
 
-			$token1 = "5991474482:AAFD-Q_PMkjLsuTSOCZbi52fYvhIFEpVDsk"; // Ganti dengan token pertama Anda
-			$id_chat1 = "5858115736"; // Ganti dengan ID chat pertama Anda
+			$token1 = ""; // Ganti dengan token pertama Anda
+			$id_chat1 = ""; // Ganti dengan ID chat pertama Anda
 
-			$token2 = "6490409467:AAFjTVCvcS3_tUi6NvoDTKWvax_12jVKcKg"; // Ganti dengan token kedua Anda
-			$id_chat2 = "1575374490"; // Ganti dengan ID chat kedua Anda
+			$token2 = ""; // Ganti dengan token kedua Anda
+			$id_chat2 = ""; // Ganti dengan ID chat kedua Anda
 
 			// Kirim notifikasi ke akun Telegram pertama
 			$url1 = "https://api.telegram.org/bot$token1/sendMessage?chat_id=$id_chat1&parse_mode=HTML&text=INFO%20PENGADUAN%20:%20Aduan%20$aduan%20dari%20$nama_pengadu%20memerlukan%20penanganan.%20Terimakasih";
